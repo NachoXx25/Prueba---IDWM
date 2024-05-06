@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "b89f8179-1530-4652-8f58-8e2c2bb68f4f",
+		"name": "Prueba Corta 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33657530"
+	},
+	"item": [
+		{
+			"name": "CrearSilla",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"SillaGamer\",\r\n    \"tipo\": \"gamer\",\r\n    \"material\": \"plastico\",\r\n    \"color\": \"rojo\",\r\n    \"altura\": 2,\r\n    \"anchura\": 5,\r\n    \"profundidad\": 10,\r\n    \"precio\": 5000,\r\n    \"stock\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5275/api/chair/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5275",
+					"path": [
+						"api",
+						"chair",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerSillas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5275/api/chair/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5275",
+					"path": [
+						"api",
+						"chair",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerSillaPorNombre",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5275/api/chair/SillaGamer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5275",
+					"path": [
+						"api",
+						"chair",
+						"SillaGamer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ActualizarSilla",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"color\": \"negro\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5275/api/chair/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5275",
+					"path": [
+						"api",
+						"chair",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IncremetarStock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5275/api/chair/1/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5275",
+					"path": [
+						"api",
+						"chair",
+						"1",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Realizar venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"cantidad\": 2,\r\n    \"pago\": 24\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5275/api/chair/purchase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5275",
+					"path": [
+						"api",
+						"chair",
+						"purchase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarSilla",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5275/api/chair/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5275",
+					"path": [
+						"api",
+						"chair",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
